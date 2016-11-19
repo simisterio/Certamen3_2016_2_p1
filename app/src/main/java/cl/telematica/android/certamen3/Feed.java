@@ -15,6 +15,7 @@ public class Feed implements Parcelable {
     private String publishedDate;
     private String content;
     private String image;
+    private int id;
     private boolean isFavorite;
 
     public Feed() {
@@ -42,7 +43,18 @@ public class Feed implements Parcelable {
             return new Feed[size];
         }
     };
+    public int getId(){
+        return id;
+    }
+    public void setId(String title){
+      this.id = 0;
+        try{
+            this.id = Integer.parseInt(title);
+        }catch (NumberFormatException nfe){
+            System.out.println("Could not parse " + nfe);
+        }
 
+    }
     public String getTitle() {
         return title;
     }

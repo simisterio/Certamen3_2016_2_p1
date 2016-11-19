@@ -1,4 +1,4 @@
-package cl.telematica.android.certamen3;
+package cl.telematica.android.certamen3.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +14,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import cl.telematica.android.certamen3.DataBase;
+import cl.telematica.android.certamen3.Feed;
+import cl.telematica.android.certamen3.MyAsyncTaskExecutor;
+import cl.telematica.android.certamen3.R;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
@@ -23,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         createMyRecyclerView();
         MyAsyncTaskExecutor.getInstance().executeMyAsynctask(this, mRecyclerView);
     }
@@ -55,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 feed.setPublishedDate(entryObj.optString("publishedDate"));
                 feed.setContent(entryObj.optString("content"));
                 feed.setImage(entryObj.optString("image"));
-
+                feed.setId(feed.getTitle());
                 feeds.add(feed);
             }
 

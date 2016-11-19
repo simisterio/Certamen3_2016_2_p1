@@ -3,6 +3,9 @@ package cl.telematica.android.certamen3;
 import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 
+import cl.telematica.android.certamen3.adapters.DataAdapter;
+import cl.telematica.android.certamen3.views.MainActivity;
+
 /**
  * Created by franciscocabezas on 11/18/16.
  */
